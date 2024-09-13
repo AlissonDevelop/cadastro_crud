@@ -3,8 +3,8 @@ cadastros = {}
 
 def criar_cadastro():
     id = input("Digite o ID do cadastro: ")
-    nome = input("Digite o nome: ")
-    idade = input("Digite a idade: ")
+    nome = input("Informe seu nome: ")
+    idade = input("Informe sua idade: ")
     cadastros[id] = {"Nome": nome, "Idade": idade}
     print(f"Cadastro de {nome} criado com sucesso!\n")
 
