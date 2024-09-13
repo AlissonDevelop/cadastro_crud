@@ -1,0 +1,59 @@
+# Dicionário para armazenar cadastros
+cadastros = {}
+
+def criar_cadastro():
+    id = input("Digite o ID do cadastro: ")
+    nome = input("Digite o nome: ")
+    idade = input("Digite a idade: ")
+    cadastros[id] = {"Nome": nome, "Idade": idade}
+    print(f"Cadastro de {nome} criado com sucesso!\n")
+
+def ler_cadastro():
+    id = input("Digite o ID do cadastro a ser lido: ")
+    if id in cadastros:
+        print(f"ID: {id} - Nome: {cadastros[id]['Nome']}, Idade: {cadastros[id]['Idade']}\n")
+    else:
+        print("Cadastro não encontrado.\n")
+
+def atualizar_cadastro():
+    id = input("Digite o ID do cadastro a ser atualizado: ")
+    if id in cadastros:
+        nome = input("Digite o novo nome: ")
+        idade = input("Digite a nova idade: ")
+        cadastros[id] = {"Nome": nome, "Idade": idade}
+        print(f"Cadastro de ID {id} atualizado com sucesso!\n")
+    else:
+        print("Cadastro não encontrado.\n")
+
+def excluir_cadastro():
+    id = input("Digite o ID do cadastro a ser excluído: ")
+    if id in cadastros:
+        del cadastros[id]
+        print(f"Cadastro de ID {id} excluído com sucesso!\n")
+    else:
+        print("Cadastro não encontrado.\n")
+
+# Menu principal
+while True:
+    print("Menu:")
+    print("1. Criar cadastro")
+    print("2. Ler cadastro")
+    print("3. Atualizar cadastro")
+    print("4. Excluir cadastro")
+    print("5. Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == '1':
+        criar_cadastro()
+    elif opcao == '2':
+        ler_cadastro()
+    elif opcao == '3':
+        atualizar_cadastro()
+    elif opcao == '4':
+        excluir_cadastro()
+    elif opcao == '5':
+        print("Saindo...")
+        break
+    else:
+        print("Opção inválida! Tente novamente.\n")
