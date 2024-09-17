@@ -2,7 +2,7 @@
 cadastros = {}
 
 def criar_cadastro():
-    id = input("Digite o ID do cadastro: ")
+    id = input("Digite o ID do cadastro se você quiser: ")
     nome = input("Informe seu nome: ")
     idade = input("Informe sua idade: ")
     cadastros[id] = {"Nome": nome, "Idade": idade}
